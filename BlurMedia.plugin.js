@@ -40,7 +40,7 @@ const config = {
                 github_username: "Mantas-2155X",
             }
         ],
-        version: "1.0.0",
+        version: "1.0.1",
         description: "Blurs images and videos until you hover over them.",
         github: "https://github.com/Mantas-2155X/BlurMedia/tree/main",
         github_raw: "https://raw.githubusercontent.com/Mantas-2155X/BlurMedia/main/BlurMedia.plugin.js"
@@ -79,7 +79,7 @@ module.exports = !global.ZeresPluginLibrary ? Dummy : (([Plugin, Api]) => {
     const {DOM, Webpack, Patcher} = window.BdApi;
 
     const SelectedChannelStore = Webpack.getModule(m => m.getCurrentlySelectedChannelId);
-    const InlineMediaWrapper = Webpack.getModule(m => m.MessageAccessories).MessageAccessories;
+    const InlineMediaWrapper = Webpack.getModule(m => m.toString().includes("renderAccessory"));
     const WrapperClasses = Webpack.getModule(m => m.wrapperPlaying);
     const Events = require("events");
     const Dispatcher = new Events();
